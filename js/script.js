@@ -11,24 +11,32 @@ let computerPlay = function (){
     return choiceArray[Math.floor(Math.random()*choiceArray.length)];
 };
 
-// Store computerPlay return value
-const computerSelection = computerPlay();
-
-// Get user input
-const playerSelection = prompt("Please select one between Rock, Paper and Scissors:").toLowerCase();
-
 // Compare user input with the random selection from the computer
-
-if (computerSelection === playerSelection) {
-    // When it's a draw
-    console.log(`You draw! You both selected ${computerSelection}!`); 
-} else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" && playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper"){
-    // When the computer wins
-    console.log(`You lose, ${computerSelection} beats ${playerSelection}`); 
-} else {
-    // When the player wins
-    console.log(`You win, ${playerSelection} beats ${computerSelection}`); 
+function playRound(computerSelection, playerSelection){
+    if (computerSelection === playerSelection) {
+        // When it's a draw
+        return `You draw! You both selected ${computerSelection}!`; 
+    } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" && playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper"){
+        // When the computer wins
+        return `You lose, ${computerSelection} beats ${playerSelection}`; 
+    } else {
+        // When the player wins
+        return `You win, ${playerSelection} beats ${computerSelection}`; 
+    }
 }
-   
-// Output the winner
 
+// Game function loops the game 5 times
+function game(){
+    // Loop the game five times
+    for (let count = 0; count < 5; count++){
+
+        // Store computerPlay return value
+        const computerSelection = computerPlay();
+
+        // Get user input
+        const playerSelection = prompt("Please select one between Rock, Paper and Scissors:").toLowerCase();
+
+        // Call the playRound function to compare the inputs
+        playRound(computerSelection, playerSelection);
+    }
+}
