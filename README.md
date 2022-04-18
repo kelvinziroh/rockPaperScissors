@@ -3,4 +3,10 @@ A simple simulation of the Rock-Paper-Scissors game played through the browser p
 
 To access the simple version, click [here](https://kelvinziroh.github.io/rockpaperscissors/).
 
-To access the **Chrome** browser console, you can use the keyboard shortcut `COMMAND` + `OPTION` + `J` on mac or `CTRL` + `SHIFT` + `J` on windows.
+To access the ***Chrome*** browser console, you can use the keyboard shortcuts:
+- `COMMAND` + `OPTION` + `J` on mac
+- `CTRL` + `SHIFT` + `J` on windows
+
+To access the ***Firefox*** browser console, you can use the keyboard shortcuts:
+- `COMMAND` + `OPTION` + `K` on mac
+- `CTRL` + `SHIFT` + `K` on windows
