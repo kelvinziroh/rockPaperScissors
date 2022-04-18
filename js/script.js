@@ -12,7 +12,7 @@ let computerPlay = function (){
 };
 
 // Get user input
-let playerSelection = prompt("Please select one between Rock, Paper and Scissors:");
+let playerSelection = prompt("Please select one between Rock, Paper and Scissors:").toLowerCase();
 
 
 // Compare user input with the random selection from the computer
