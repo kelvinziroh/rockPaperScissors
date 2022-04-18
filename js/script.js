@@ -27,16 +27,33 @@ function playRound(computerSelection, playerSelection){
 
 // Game function loops the game 5 times
 function game(){
+    // Intialize the computer and player score
+    let computerScore = 0;
+    let playerScore = 0;
+
     // Loop the game five times
     for (let count = 0; count < 5; count++){
-
-        // Store computerPlay return value
+        // Store computerPlay return value and get player input
         const computerSelection = computerPlay();
-
-        // Get user input
         const playerSelection = prompt("Please select one between Rock, Paper and Scissors:").toLowerCase();
 
-        // Call the playRound function to compare the inputs
-        playRound(computerSelection, playerSelection);
+        // Call the playRound function to compare the inputs and store the output in a variable
+        let output = playRound(computerSelection, playerSelection);
+
+        // Check the output to update the scores
+        if (output === `You win, ${playerSelection} beats ${computerSelection}`) {
+            playerScore += 2;
+        } else if (output === `You lose, ${computerSelection} beats ${playerSelection}`) {
+            computerScore += 2;
+        } else {
+            playerScore += 1;
+            computerScore += 1;
+        }
     }
+
+    return (playerScore > computerScore) ? 
+        `Congratulations, You won ${playerScore} to ${computerScore} against the computer!` : 
+        `Sorry, better luck next time, The computer beat you ${computerScore} to ${playerScore}!`;
 }
+
+console.log(game());
