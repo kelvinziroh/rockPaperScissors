@@ -11,8 +11,11 @@ let computerPlay = function (){
     return choiceArray[Math.floor(Math.random()*choiceArray.length)];
 };
 
+// Store computerPlay return value
+const computerSelection = computerPlay();
+
 // Get user input
-let playerSelection = prompt("Please select one between Rock, Paper and Scissors:").toLowerCase();
+const playerSelection = prompt("Please select one between Rock, Paper and Scissors:").toLowerCase();
 
 
 // Compare user input with the random selection from the computer
