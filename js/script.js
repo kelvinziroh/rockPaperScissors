@@ -1,6 +1,11 @@
 const buttonsDiv = document.querySelector('.buttons');
+const buttons = document.querySelectorAll('button');
 const resultsDiv = document.querySelector('.results');
 const para = document.createElement('p');
+const playerDiv = document.querySelector('.player-score');
+const computerDiv = document.querySelector('.computer-score');
+let playerScore = 0;
+let computerScore = 0;
 
 // Create a function with an array for the math.random function to select from 
 let computerPlay = function (){
@@ -29,48 +34,34 @@ function playRound(computerSelection, playerSelection){
     }
 }
 
+function scoreCount(results){
+    if (results.includes('You draw')) {
+        playerScore += 1;
+        computerScore += 1;
+    } else if (results.includes('You lose')) {
+        computerScore += 2;
+    } else {
+        playerScore += 2;
+    }
+}
+
+function checkScore(playerScore, computerScore){
+    if (playerScore >= 10 || computerScore >= 10) {
+        buttons.forEach(button => button.setAttribute('disabled', 'True'));
+    }
+}
+
 // capture the user's selection and compare it to computer's upon selection
 buttonsDiv.addEventListener('click', (e) => {
     if (e.target.nodeName == 'BUTTON') {
         let playerSelection = e.target.textContent.toLowerCase();
         let computerSelection = computerPlay();
         let results = playRound(computerSelection, playerSelection);
-        // console.log(result);
+        scoreCount(results);
+        playerDiv.textContent = `${playerScore}`;
+        computerDiv.textContent = `${computerScore}`;
         para.textContent = results;
         resultsDiv.appendChild(para);
+        checkScore(playerScore, computerScore);
     }
 });
-
-
-// Game function loops the game 5 times
-/* function game(){
-    // Intialize the computer and player score
-    let computerScore = 0;
-    let playerScore = 0;
-
-    // Loop the game five times
-    for (let count = 0; count < 5; count++){
-        // Store computerPlay return value and get player input
-        const computerSelection = computerPlay();
-        const playerSelection = prompt("Please select one between Rock, Paper and Scissors:").toLowerCase();
-
-        // Call the playRound function to compare the inputs and store the output in a variable
-        let output = playRound(computerSelection, playerSelection);
-
-        // Check the output to update the scores
-        if (output === `You win, ${playerSelection} beats ${computerSelection}`) {
-            playerScore += 2;
-        } else if (output === `You lose, ${computerSelection} beats ${playerSelection}`) {
-            computerScore += 2;
-        } else {
-            playerScore += 1;
-            computerScore += 1;
-        }
-    } 
-
-    return (playerScore > computerScore) ? 
-        `Congratulations, You won ${playerScore} to ${computerScore} against the computer!` : 
-        `Sorry, better luck next time, The computer beat you ${computerScore} to ${playerScore}!`;
-}
-
-console.log(game()); */
