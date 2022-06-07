@@ -1,3 +1,5 @@
+const buttonsDiv = document.querySelector('.buttons');
+
 // Create a function with an array for the math.random function to select from 
 let computerPlay = function (){
     // Create choice array for computer to randomly select from
@@ -25,8 +27,19 @@ function playRound(computerSelection, playerSelection){
     }
 }
 
+// capture the user's selection and compare it to computer's upon selection
+buttonsDiv.addEventListener('click', (e) => {
+    if (e.target.nodeName == 'BUTTON') {
+        let playerSelection = e.target.textContent.toLowerCase();
+        let computerSelection = computerPlay();
+        let result = playRound(computerSelection, playerSelection);
+        console.log(result);
+    }
+});
+
+
 // Game function loops the game 5 times
-function game(){
+/* function game(){
     // Intialize the computer and player score
     let computerScore = 0;
     let playerScore = 0;
@@ -49,11 +62,11 @@ function game(){
             playerScore += 1;
             computerScore += 1;
         }
-    }
+    } 
 
     return (playerScore > computerScore) ? 
         `Congratulations, You won ${playerScore} to ${computerScore} against the computer!` : 
         `Sorry, better luck next time, The computer beat you ${computerScore} to ${playerScore}!`;
 }
 
-console.log(game());
+console.log(game()); */
