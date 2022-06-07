@@ -25,7 +25,9 @@ function playRound(computerSelection, playerSelection){
     if (computerSelection === playerSelection) {
         // When it's a draw
         return `You draw! You both selected ${computerSelection}!`; 
-    } else if (computerSelection === "rock" && playerSelection === "scissors" || computerSelection === "paper" && playerSelection === "rock" || computerSelection === "scissors" && playerSelection === "paper"){
+    } else if (computerSelection === "rock" && playerSelection === "scissors" || 
+               computerSelection === "paper" && playerSelection === "rock" || 
+               computerSelection === "scissors" && playerSelection === "paper") {
         // When the computer wins
         return `You lose, ${computerSelection} beats ${playerSelection}`; 
     } else {
