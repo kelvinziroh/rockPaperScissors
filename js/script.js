@@ -32,7 +32,7 @@ function playRound(computerSelection, playerSelection){
         return `You lose, ${computerSelection} beats ${playerSelection}`; 
     } else {
         // When the player wins
-        return `You win, ${playerSelection} beats ${computerSelection}`; 
+        return `You win, ${playerSelection} beats ${computerSelection}`;  
     }
 }
 
@@ -50,7 +50,14 @@ function scoreCount(results){
 function checkScore(playerScore, computerScore){
     if (playerScore >= 10 || computerScore >= 10) {
         buttons.forEach(button => button.setAttribute('disabled', 'True'));
-    }
+        if (playerScore > computerScore) {
+            para.textContent = `Congratulations, You won ${playerScore} to ${computerScore} against the computer!`;
+        } else if (playerScore === computerScore){
+            para.textContent = `Oops, That was closed. You tied at ${playerScore}!`;
+        } else {
+            para.textContent = `Sorry, better luck next time, The computer beat you ${computerScore} to ${playerScore}!`;
+        }
+    } 
 }
 
 // capture the user's selection and compare it to computer's upon selection
