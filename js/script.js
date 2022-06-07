@@ -1,4 +1,6 @@
 const buttonsDiv = document.querySelector('.buttons');
+const resultsDiv = document.querySelector('.results');
+const para = document.createElement('p');
 
 // Create a function with an array for the math.random function to select from 
 let computerPlay = function (){
@@ -32,8 +34,10 @@ buttonsDiv.addEventListener('click', (e) => {
     if (e.target.nodeName == 'BUTTON') {
         let playerSelection = e.target.textContent.toLowerCase();
         let computerSelection = computerPlay();
-        let result = playRound(computerSelection, playerSelection);
-        console.log(result);
+        let results = playRound(computerSelection, playerSelection);
+        // console.log(result);
+        para.textContent = results;
+        resultsDiv.appendChild(para);
     }
 });
 
