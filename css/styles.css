@@ -2,3 +2,12 @@ h1 {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
 }
+
+div.rps-img-hero {
+    width: 60%;
+    height: 400px;
+    background-image: url(../images/rps.png);
+    background-size: cover;
+    margin: 10px auto;
+    border-radius: 10px;
+}
