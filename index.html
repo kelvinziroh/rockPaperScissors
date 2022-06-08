@@ -5,23 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cantata+One&family=Mandali&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
+    <h1>Rock, Paper & Scissors!</h1>
     <div class="rps-img-hero"></div>
-    <h1>Game of Rock Paper Scissors!</h1>
-    <div class="buttons">
-        <button class="btn rock">Rock</button>
-        <button class="btn paper">Paper</button>
-        <button class="btn scissors">Scissors</button>
+    <div class="gaming-section">
+        <div class="scores">
+            <h3>Your Score</h3>
+            <div class="score player-score">0</div>
+            <h3>Computer Score</h3>
+            <div class="score computer-score">0</div>
+        </div>
+        <div class="user-interaction">
+            <div class="buttons">
+                <button class="btn rock">Rock</button>
+                <button class="btn paper">Paper</button>
+                <button class="btn scissors">Scissors</button>
+            </div>
+            <div class="results"></div>
+        </div>
     </div>
-    <div class="scores">
-        <h3>Your Score</h3>
-        <div class="player-score">0</div>
-        <h3>Computer Score</h3>
-        <div class="computer-score">0</div>
-    </div>
-    <div class="results"></div>
     <script src="js/script.js"></script>
 </body>
 </html>

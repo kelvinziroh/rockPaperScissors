@@ -1,13 +1,130 @@
+/* positioning and general styles */
 h1 {
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
 }
 
 div.rps-img-hero {
     width: 60%;
     height: 400px;
-    background-image: url(../images/rps.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #0d2866; */
+    background-image: linear-gradient(45deg, rgba(13, 40, 102, 0.1) 0%, rgba(73, 23, 97, 0.1) 32%, rgba(11, 33, 95, 0.1) 100%),
+                      url(../images/rps.png);
     background-size: cover;
     margin: 10px auto;
     border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
+
+div.gaming-section {
+    width: 60%;
+    margin: 25px auto;
+    display: flex;
+}
+
+div.scores {
+    background-image: linear-gradient(45deg, #0d2866 0%, #491761 32%, #0b215f 100%);
+    border-radius: 10px;
+    padding: 10px 20px 20px 20px;
+    margin-right: 20px;
+    color: white;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+div.user-interaction {
+    width: 78.2%;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+div.buttons {
+    margin: 15px 15px;
+}
+
+div.results {
+    margin: 15px 15px;
+}
+
+div.buttons > button.btn {
+    background-image: linear-gradient(248deg, #0d2866 0%, #491761 100%);
+    border-radius: 5px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    font-weight: 400;
+    width: 130px;
+    height: 50px;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-right: 10px;
+}
+
+div.buttons > button.btn:hover {
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+    transition-duration: .1s;
+}
+
+/* typography */
+/* cantanta one is for the main heading -Rock paper scissors- at 44px and the -players' scores- at 34px */
+/* mandali is for the h3's at 25px */
+/* roboto slab is for buttons at (25px regular -- 400 weight) and result text at (35px and bold -- 700 weight)being displayed */
+
+/* font-family: 'Cantata One', serif;
+font-family: 'Mandali', sans-serif;
+font-family: 'Roboto Slab', serif; */
+/* typography */
+h1 {
+    text-align: center;
+    font-family: 'Cantata One', serif;
+    font-size: 44px;
+}
+
+div.scores > h3 {
+    font-family: 'Mandali', sans-serif;
+    font-size: 16px;
+}
+
+div.score {
+    font-family: 'Cantata One', serif;
+    font-size: 30px;
+}
+
+div.results > p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+
+
+/* CSS */
+/* .button-36 {
+  background-image: linear-gradient(92.88deg, #0d2866 9.16%, #491761 43.89%, #0b215f 64.72%);
+  border-radius: 5px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: 10px;
+} */
+
